@@ -14,24 +14,24 @@ public class Employee implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private String email;
-    private String job_title;
-    private String phone_number;
-    private String image_url;
+    private String jobTitle;
+    private String phoneNumber;
+    private String imageUrl;
     @Column(nullable = false, updatable = false)
     private String code;
 
     public Employee() {}
 
-    public Employee(String first_name, String last_name, String email, String job_title, String phone_number, String image_url, String code) {
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Employee(String firstName, String lastName, String email, String jobTitle, String phoneNumber, String imageUrl, String code) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
-        this.job_title = job_title;
-        this.phone_number = phone_number;
-        this.image_url = image_url;
+        this.jobTitle = jobTitle;
+        this.phoneNumber = phoneNumber;
+        this.imageUrl = imageUrl;
         this.code = code;
     }
 
@@ -44,19 +44,19 @@ public class Employee implements Serializable {
     }
 
     public String getFirstName() {
-        return first_name;
+        return firstName;
     }
 
-    public void setFirstName(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return last_name;
+        return lastName;
     }
 
-    public void setLastName(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -68,27 +68,27 @@ public class Employee implements Serializable {
     }
 
     public String getJobTitle() {
-        return job_title;
+        return jobTitle;
     }
 
-    public void setJobTitle(String job_title) {
-        this.job_title = job_title;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
     public String getPhoneNumber() {
-        return phone_number;
+        return phoneNumber;
     }
 
-    public void setPhoneNumber(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getImageUrl() {
-        return image_url;
+        return imageUrl;
     }
 
-    public void setImageUrl(String image_url) {
-        this.image_url = image_url;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getCode() {
@@ -103,12 +103,12 @@ public class Employee implements Serializable {
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", first_name=" + first_name +
-                ", last_name=" + last_name +
+                ", first_name=" + firstName +
+                ", last_name=" + lastName +
                 ", email=" + email +
-                ", job_title=" + job_title +
-                ", phone_number=" + phone_number +
-                ", image_url=" + image_url +
+                ", job_title=" + jobTitle +
+                ", phone_number=" + phoneNumber +
+                ", image_url=" + imageUrl +
                 "}";
     }
 }

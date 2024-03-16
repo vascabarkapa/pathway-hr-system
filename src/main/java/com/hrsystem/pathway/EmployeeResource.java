@@ -19,39 +19,39 @@ import com.hrsystem.pathway.service.EmployeeService;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeResource {
-    private final EmployeeService employee_service;
+    private final EmployeeService employeeService;
 
-    public EmployeeResource(EmployeeService employee_service) {
-        this.employee_service = employee_service;
+    public EmployeeResource(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     @GetMapping
     public ResponseEntity<List<Employee>> getAllEmployees() {
-        List<Employee> employees = employee_service.findAllEmployees();
+        List<Employee> employees = employeeService.findAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") Long id) {
-        Employee employee = employee_service.findEmployeeById(id);
+        Employee employee = employeeService.findEmployeeById(id);
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
-        Employee new_employee = employee_service.addEmployee(employee);
+        Employee new_employee = employeeService.addEmployee(employee);
         return new ResponseEntity<>(new_employee, HttpStatus.CREATED);
     }
 
     @PutMapping
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
-        Employee updated_employee = employee_service.updateEmployee(employee);
+        Employee updated_employee = employeeService.updateEmployee(employee);
         return new ResponseEntity<>(updated_employee, HttpStatus.OK);
     }
 
     @DeleteMapping("{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {
-        employee_service.deleteEmployee(id);
+        employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

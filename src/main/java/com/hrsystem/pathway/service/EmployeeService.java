@@ -12,32 +12,32 @@ import com.hrsystem.pathway.repo.EmployeeRepo;
 
 @Service
 public class EmployeeService {
-    private final EmployeeRepo employee_repo;
+    private final EmployeeRepo employeeRepo;
 
     @Autowired
-    public EmployeeService(EmployeeRepo employee_repo) {
-        this.employee_repo = employee_repo;
+    public EmployeeService(EmployeeRepo employeeRepo) {
+        this.employeeRepo = employeeRepo;
     }
 
     public Employee addEmployee(Employee employee) {
         employee.setCode(UUID.randomUUID().toString());
-        return employee_repo.save(employee);
+        return employeeRepo.save(employee);
     }
 
     public List<Employee> findAllEmployees() {
-        return employee_repo.findAll();
+        return employeeRepo.findAll();
     }
 
     public Employee updateEmployee(Employee employee) {
-        return employee_repo.save(employee);
+        return employeeRepo.save(employee);
     }
 
     public Employee findEmployeeById(Long id) {
-        return employee_repo.findEmployeeById(id)
+        return employeeRepo.findEmployeeById(id)
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " wasn't found!"));
     }
 
     public void deleteEmployee(Long id) {
-        employee_repo.deleteEmployeeById(id);
+        employeeRepo.deleteEmployeeById(id);
     }
 }
