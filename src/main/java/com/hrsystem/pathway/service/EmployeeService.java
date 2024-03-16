@@ -10,6 +10,8 @@ import com.hrsystem.pathway.exception.UserNotFoundException;
 import com.hrsystem.pathway.model.Employee;
 import com.hrsystem.pathway.repo.EmployeeRepo;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class EmployeeService {
     private final EmployeeRepo employeeRepo;
@@ -37,6 +39,7 @@ public class EmployeeService {
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " wasn't found!"));
     }
 
+    @Transactional
     public void deleteEmployee(Long id) {
         employeeRepo.deleteEmployeeById(id);
     }
