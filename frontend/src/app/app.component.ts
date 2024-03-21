@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public editEmployee: Employee;
   public deleteEmployee: Employee;
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.getEmployees();
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  public onAddEmloyee(addForm: NgForm): void {
+  public onAddEmployee(addForm: NgForm): void {
     const container = document.getElementById('add-employee-form');
     if (!container) {
       console.error("Add employee formnot found");
@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  public onUpdateEmloyee(employee: Employee): void {
+  public onUpdateEmployee(employee: Employee): void {
     this.employeeService.updateEmployee(employee).subscribe(
       (response: Employee) => {
         console.log(response);
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  public onDeleteEmloyee(employeeId: number): void {
+  public onDeleteEmployee(employeeId: number): void {
     this.employeeService.deleteEmployee(employeeId).subscribe(
       (response: void) => {
         console.log(response);
@@ -82,10 +82,10 @@ export class AppComponent implements OnInit {
     const results: Employee[] = [];
     for (const employee of this.employees) {
       if (employee.firstName.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || employee.lastName.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || employee.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || employee.phoneNumber.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+        || employee.lastName.toLowerCase().indexOf(key.toLowerCase()) !== -1
+        || employee.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
+        || employee.phoneNumber.toLowerCase().indexOf(key.toLowerCase()) !== -1
+        || employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
         results.push(employee);
       }
     }
@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
       console.error("Main container not found");
       return;
     }
-  
+
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
@@ -120,5 +120,4 @@ export class AppComponent implements OnInit {
     container.appendChild(button);
     button.click();
   }
-  
 }
