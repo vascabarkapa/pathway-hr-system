@@ -20,10 +20,10 @@
   <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
      <div class="card m-b-30">
         <div class="card-body row">
-           <div class="col-6">
+           <div class="col-4">
               <a href=""><img src="{{employee?.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
            </div>
-           <div class="col-6 card-title align-self-center mb-0">
+           <div class="col-8 card-title align-self-center mb-0">
               <h5>{{employee?.firstName + " " + employee?.lastName}}</h5>
               <p class="m-0">{{employee?.jobTitle}}</p>
            </div>
