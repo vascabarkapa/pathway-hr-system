@@ -90,7 +90,7 @@ export class AppComponent implements OnInit {
       }
     }
     this.employees = results;
-    if (results.length === 0 || !key) {
+    if (results.length === 0 && !key) {
       this.getEmployees();
     }
   }
