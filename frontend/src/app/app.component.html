@@ -25,7 +25,9 @@
       <div class="card m-b-30">
         <div class="card-body row">
           <div class="col-4">
-            <a href=""><img src="{{employee?.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
+            <span><img src="{{employee?.imageUrl}}"
+                alt="{{'profile_' + employee?.firstName + '_' + employee?.lastName}}"
+                class="img-fluid rounded-circle border border-dark w-60"></span>
           </div>
           <div class="col-8 card-title align-self-center mb-0">
             <h5 class="mb-0">{{employee?.firstName}}</h5>
@@ -173,7 +175,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Are you sure you want to delete employee <b>{{deleteEmployee?.firstName + " " + deleteEmployee?.lastName}}</b>?
+          <p>Are you sure you want to delete employee <b>{{deleteEmployee?.firstName + " " +
+              deleteEmployee?.lastName}}</b>?
           </p>
           <div class="modal-footer pb-0 pr-0">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
