@@ -45,6 +45,10 @@ a {
     margin-bottom: 30px;
 }
 
+.contact {
+    text-decoration: none;
+}
+
 .w-60 {
     width: 60px;
 }
@@ -59,23 +63,6 @@ h6 {
     font-weight: 600;
 }
 
-.social-links li a {
-    -webkit-border-radius: 50%;
-    background-color: rgba(89, 206, 181, .85);
-    border-radius: 50%;
-    color: #fff;
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    width: 30px;
-    font-size: 12px;
-}
-
 i {
-    color: white;
-}
-
-a {
     color: white;
 }

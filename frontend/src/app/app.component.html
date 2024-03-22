@@ -36,10 +36,14 @@
           </div>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="fa fa-envelope text-dark mr-2"
+          <a class="contact text-dark" href="mailto:{{employee?.email}}">
+            <li class="list-group-item"><i class="fa fa-envelope text-dark mr-2"
               aria-hidden="true"></i>{{employee?.email}}</li>
+          </a>
+          <a class="contact text-dark" href="tel:{{employee?.phoneNumber}}">
           <li class="list-group-item"><i class="fa fa-phone text-dark mr-2"
               aria-hidden="true"></i>{{employee?.phoneNumber}}</li>
+          </a>
         </ul>
         <div class="card-body">
           <div class="float-right btn-group btn-group-sm">
